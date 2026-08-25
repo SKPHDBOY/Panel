@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALOOZ Hosting Panel</title>
+</head>
+<body>
+  <h1>🚀 ALOOZ Hosting Panel</h1>
+  <p>🟢 Panel Online</p>
+  <p id="status">Checking...</p>
+
+  <script>
+    fetch("/api/status")
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById("status").innerText =
+          "Server: " + data.status;
+      });
+  </script>
+</body>
+</html>
